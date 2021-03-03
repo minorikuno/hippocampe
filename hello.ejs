@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hippocampe</title>
+   <link rel="stylesheet" href="/css/style.css">
+   <link rel="icon" href="/img/brain.PNG" type="image">
+   <script src="/send_url.js"></script>
+  </head>
+  
+   <body>
+    
+    <%- include('header'); %>
+
+   <div class="top-wrapper">  
+    <div class="add"> 
+     <a href="/add">Add to my Hippocampe</a>
+    </div>
+
+    <div class="table-wrapper">
+      <div class="table-head">
+       
+       <span class="list-top">Hippocampe List</span>
+     </div>
+
+     <ul class="table-body">
+      <% memoire.forEach((memoir) => { %>
+        <li>
+         <div class="table-item">
+          <span class="id-column"><% memoir.id %></span>
+          <input id="check" type="checkbox" name="" value="2">
+          <span class="name-column"><%= memoir.name %></span>
+        
+        <div class="deuxbtn">
+          <form action="/delete/<%= memoir.id %>" method="post">
+            <input class="delete" type="submit" value="J'oublie">
+          </form>
+          <a href="/edit/<%= memoir.id %>" class="edit">Edit</a>
+        </div>
+        </div>
+      
+        </li>
+      <%}) %>
+      
+    </ul>
+    </div>
+
+    
+    
+
+      
+        
+
+
+
+
+  </div>
+   
+  
+<footer>
+  <p>Crée par Minori.K 2021</p>
+
+</footer>
+  
+  
+   
+
+
+   </body>
+</html>

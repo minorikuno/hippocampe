@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hippocampe</title>
+   <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <%- include('header'); %>
+   <body>
+     <div class="form-wrapper">
+       <div class="heading">
+        <h1>Je modifie...</h1>
+       </div>
+       <form action="/update/<%= memoir.id %>" method="post">
+        <input type="text" value="<%= memoir.name %>" name="memoireName" maxlength="50" required>
+         <input class="memoriser" type="submit" value="Modifier!">
+       </form>
+      </div>
+     <div class="back-wrapper">
+      <a class="back" href="/">Back</a>
+    </div>
+
+   </body>
+</html>
